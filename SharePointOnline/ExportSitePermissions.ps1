@@ -3,6 +3,12 @@ param(
     [string]$outputFile = "PermissionsReport.csv"
 )
 
+if (-not (Get-Module -ListAvailable -Name PnP.PowerShell)) {
+    Install-Module -Name PnP.PowerShell -AllowClobber -Force
+}
+
+Import-Module PnP.PowerShell
+
 # Conectar ao SharePoint Online
 Connect-PnPOnline -Url $siteUrl -Interactive
 

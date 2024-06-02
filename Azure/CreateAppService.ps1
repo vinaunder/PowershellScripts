@@ -1,12 +1,13 @@
 # Install this modules before running the script:
 # Install-Module -Name Az -AllowClobber -Force
 # and Connect-AzAccount
+Import-Module Az
 param(
     [string]$resourceGroupName,
     [string]$location,
     [string]$appServicePlanName,
     [string]$appServiceName,
-    [string]$skuName = "F1", 
+    [string]$skuName,
     [string]$runtimeStack = "DOTNETCORE|3.1" 
 )
 
